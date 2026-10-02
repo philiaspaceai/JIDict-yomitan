@@ -1,6 +1,14 @@
 # Panduan Kontribusi
 
-Siapa pun bisa membantu memperbaiki kamus ini — kamu tidak perlu bisa programming. Kamu cukup menyampaikan apa yang ingin diperbaiki atau ditambahkan dalam bahasa sehari-hari kepada AI agent pilihanmu (bebas pakai apa saja — Claude Code, OpenCode, Codex, Hermes, Cursor, dan lain-lain). Agent-mu yang mengerjakan sisanya.
+Siapa pun bisa membantu memperbaiki kamus ini — kamu tidak perlu bisa programming. Kamu cukup menyampaikan apa yang ingin diperbaiki atau ditambahkan dalam bahasa sehari-hari kepada AI agent pilihanmu. Agent-mu yang mengerjakan sisanya.
+
+## Belum punya AI agent?
+
+Rekomendasi pribadi: Hermes Agent, Claude Desktop, atau OpenCode Desktop. Unduh salah satunya di bawah ini, pasang, lalu lanjut ke langkah berikutnya.
+
+- Hermes Agent — https://hermes-agent.nousresearch.com/desktop
+- Claude Desktop — https://claude.com/download
+- OpenCode Desktop — https://opencode.ai/download
 
 ## Yang bisa kamu lakukan
 
