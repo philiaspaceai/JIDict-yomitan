@@ -12,7 +12,7 @@ Kamus **Jepang → Indonesia** berisi **±299.800 kosakata** lengkap dengan baca
 
 ## Isi kamus
 
-| | |
+| Aspek | Detail |
 |---|---|
 | Arah | Jepang → Indonesia |
 | Entri (v1.0.2) | 299.801 |
