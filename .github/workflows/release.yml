@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag rilis (misal v1.0.2)"
+        required: true
 
 permissions:
   contents: write
@@ -22,10 +27,12 @@ jobs:
         run: |
           mkdir -p dist
           TAG="${GITHUB_REF_NAME}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then TAG="${{ inputs.tag }}"; fi
           node scripts/yomitan.mjs pack ./src "./dist/JIDict-yomitan-${TAG}.zip"
           ls -lh dist/
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
           files: dist/*.zip
           generate_release_notes: true
