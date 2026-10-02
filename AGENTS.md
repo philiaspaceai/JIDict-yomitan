@@ -14,7 +14,12 @@ butuh Node + `zip`/`unzip`). Jangan mengarang format sendiri.
 
 ## 1. Urutan kerja yang benar
 
-1. Pastikan bekerja di **fork milik user**, bukan langsung di `philiaspaceai/JIDict-yomitan`.
+1. Bekerja di **fork milik user**, bukan langsung di `philiaspaceai/JIDict-yomitan`.
+   Jika fork belum ada, buat dulu lalu daftarkan upstream-nya:
+   ```bash
+   gh repo fork philiaspaceai/JIDict-yomitan --clone=false
+   git remote add upstream https://github.com/philiaspaceai/JIDict-yomitan.git
+   ```
    Sinkronisasi fork dengan upstream sebelum mulai:
    ```bash
    git fetch upstream
