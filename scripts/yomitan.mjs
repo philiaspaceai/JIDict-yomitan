@@ -195,7 +195,7 @@ function cmdPack(dir, outZip) {
   const absOut = resolve(outZip);
   if (existsSync(absOut)) rmSync(absOut);
   try {
-    execFileSync("zip", ["-9", "-q", "-r", absOut, ".", "-i", "*.json", "*.css"], { cwd: absDir, stdio: "inherit" });
+    execFileSync("zip", ["-9", "-q", "-r", absOut, ".", "-i", "*.json", "*.css", "LICENSE.md"], { cwd: absDir, stdio: "inherit" });
   } catch {
     fail(`pack failed (need 'zip' installed)`);
   }

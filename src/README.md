@@ -5,7 +5,8 @@ Folder ini hasil unpack `archive/original/JIDict-v1.0.2.zip` dan adalah
 
 ## Aturan
 
-- Hanya boleh ada di root `src/`: `index.json`, `*_bank_N.json`, `styles.css` (opsional).
+- Di root `src/`: `index.json`, `*_bank_N.json`, `LICENSE.md`, `styles.css` (opsional).
+  File lain (misalnya `LICENSE.txt` arsip, `README.md` ini) ikut ter-commit tapi tidak masuk zip rilis.
 - Penomoran bank mulai dari 1 dan berurutan tanpa lompat (`term_bank_1.json`, `term_bank_2.json`, …).
 - Tiap file bank ≤ 10000 entri (script otomatis split saat `add`).
 - Jangan edit file di `dist/` — itu output build.

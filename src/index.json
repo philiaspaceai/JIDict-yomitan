@@ -1,1 +1,11 @@
-{"title": "JIDict v.1.0.2", "format": 3, "revision": "1"}
+{
+  "title": "JIDict",
+  "format": 3,
+  "revision": "1.0.3",
+  "author": "Utawnyan & Demonkzz",
+  "description": "Kamus Jepang-Indonesia untuk Yomitan (Japanese-Indonesian dictionary for Yomitan).",
+  "url": "https://github.com/philiaspaceai/JIDict-yomitan",
+  "attribution": "CC BY-NC 4.0 — https://creativecommons.org/licenses/by-nc/4.0/",
+  "sourceLanguage": "ja",
+  "targetLanguage": "id"
+}
