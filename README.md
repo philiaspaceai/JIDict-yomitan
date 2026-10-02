@@ -35,7 +35,9 @@ Catatan perubahan selengkapnya tersedia pada halaman masing-masing Release. Berk
 
 ## Berkontribusi
 
-JIDict dikembangkan bersama komunitas. Apabila menemukan padanan arti yang kurang tepat, bacaan yang keliru, atau kosakata yang belum tercakup, kontribusi dalam bentuk perbaikan sangat diharapkan. Seluruh tata cara kontribusi — mulai dari pengajuan perubahan hingga peninjauan — dijelaskan pada **[CONTRIBUTING.md](CONTRIBUTING.md)**; secara garis besar, setiap perubahan diajukan melalui Pull Request ke branch `develop`.
+JIDict dikembangkan bersama komunitas. Apabila menemukan padanan arti yang kurang tepat, bacaan yang keliru, atau kosakata yang belum tercakup, kamu bisa membantu memperbaikinya — tanpa perlu bisa programming. Cukup gunakan AI agent pilihanmu yang telah dipasangi skill wajib repo ini, lalu sampaikan keinginanmu dalam bahasa sehari-hari.
+
+Seluruh panduannya ada di **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 ## Lisensi
 
