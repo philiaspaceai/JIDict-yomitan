@@ -8,6 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Tolak PR yang langsung ke main
+        run: |
+          if [ "${{ github.base_ref }}" = "main" ] && [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "DITOLAK: PR ke main hanya boleh dari branch develop."
+            echo "Tutup PR ini dan buka ulang dengan target branch develop."
+            exit 1
+          fi
+          echo "OK: target PR valid (base=${{ github.base_ref }})."
   validate:
     runs-on: ubuntu-latest
     steps:
