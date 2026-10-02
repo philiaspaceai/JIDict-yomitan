@@ -1,54 +1,52 @@
 # Panduan Kontribusi
 
-Terima kasih sudah mau membantu memperbaiki JIDict. Semua perubahan masuk lewat **Pull Request ke branch `develop`** — branch `main` terproteksi dan hanya menerima PR dari `develop`.
+Kamu tidak perlu bisa programming untuk berkontribusi di sini. Cukup punya AI agent (bebas pakai apa saja — Claude Code, OpenCode, Codex, Hermes, Cursor, dan lain-lain) dan sampaikan keinginanmu dalam bahasa sehari-hari. Agent-mu yang mengerjakan sisanya.
 
-## Bentuk kontribusi yang diterima
+Satu-satunya syarat teknis: agent-mu **wajib memakai skill resmi repo ini**.
 
-- **Perbaiki arti/terjemahan** yang salah atau kurang tepat.
-- **Perbaiki reading (bacaan)** yang keliru.
-- **Tambah kosakata baru** yang belum ada di kamus.
-- **Perbaiki kelas kata (Part of Speech)** yang tidak sesuai.
-- **Laporkan masalah** lewat Issue kalau belum sempat memperbaikinya sendiri (sertakan kata, reading, dan arti yang benar).
+## Syarat wajib: pasang skill Yomitan
 
-## Persiapan
+Sebelum mulai, pastikan skill berikut terpasang di agent-mu:
 
-- [Node.js](https://nodejs.org/) versi 18 ke atas.
-- Perintah `zip` dan `unzip` (umumnya sudah tersedia di Linux/macOS; Windows via Git Bash).
-- Tidak perlu install apa pun — script validasi sudah tersedia di `scripts/yomitan.mjs`.
+```bash
+npx skills add philiaspaceai/yomitan-agent-skills
+```
 
-## Alur kerja
+Belum tahu cara menjalankannya? Salin kalimat ini ke agent-mu:
 
-1. **Fork** repo ini, lalu clone fork-mu.
-2. Buat branch baru dari `develop` yang terbaru:
-   ```bash
-   git fetch upstream
-   git checkout develop
-   git pull upstream develop
-   git checkout -b perbaiki-arti-xyz
-   ```
-3. **Ubah data di `src/`** — di sinilah entri kamus tinggal (hasil unpack rilis stabil). Contoh perintah:
-   ```bash
-   # cari entri
-   node scripts/yomitan.mjs get ./src --term "猫"
+```
+Please install the Yomitan agent skills into my setup by running:
+npx skills add philiaspaceai/yomitan-agent-skills
+```
 
-   # tambah entri: [kata, reading, tag, rules, skor, [arti], sequence, tag-kata]
-   node scripts/yomitan.mjs add ./src --entry '["猫","ねこ","","",0,["kucing"],1,""]'
-   ```
-   File `term_bank_*.json` berukuran besar — usahakan **satu PR untuk satu topik** (misalnya satu kelompok kata atau satu jenis perbaikan), jangan campur banyak hal sekaligus.
-4. **Validasi wajib sebelum push:**
-   ```bash
-   node scripts/yomitan.mjs validate ./src
-   ```
-   Hasil harus `ok: true`. Perbaiki dulu kalau ada `errors`.
-5. Push branch-mu dan buka PR dengan target **`develop`**. Jelaskan di PR: apa yang diubah, berapa entri, dan hasil validasi.
-6. Tunggu review maintainer. Kalau ada komentar, perbaiki di branch yang sama.
+Tanpa skill ini, agent tidak tahu cara mengedit data kamus dengan benar — kontribusi yang masuk tanpa mengikuti standar skill tidak dapat diproses.
+
+## Cara berkontribusi
+
+1. Minta agent-mu untuk bekerja dari branch `develop` yang terbaru.
+2. Sampaikan dalam bahasa biasa apa yang kamu mau, misalnya:
+   - "Tambahkan kata ... dengan arti ..."
+   - "Betulkan arti kata ... menjadi ..."
+   - "Betulkan bacaan (reading) kata ..."
+3. Minta agent-mu menjalankan validasi sampai lolos dan membukakan Pull Request ke branch `develop`.
+4. Periksa kembali hasil kerja agent-mu, lalu kirim PR tersebut.
+
+Contoh perintah lengkap ke agent-mu:
+
+```
+Kerjakan dari branch develop terbaru. Tambahkan kata "猫" (dibaca ねこ)
+dengan arti "kucing". Jalankan validasi sampai lolos, lalu bukakan
+Pull Request ke branch develop.
+```
 
 ## Aturan
 
-- Jangan commit file `.zip` atau isi `dist/` — file rilis dibuat otomatis oleh CI.
-- Jangan mengubah `revision` di `src/index.json` pada PR biasa — nomor versi dinaikkan maintainer saat rilis.
-- Jangan menghapus entri dalam jumlah besar tanpa diskusi di Issue terlebih dahulu.
+- Satu PR untuk satu keperluan. Jangan campur banyak perubahan yang tidak berkaitan.
+- Semua PR ditujukan ke branch `develop`, bukan `main`.
+- Jangan mengubah `revision` di `src/index.json` — nomor versi dinaikkan saat rilis.
+- Jangan menyertakan file `.zip` atau isi folder `dist/` — berkas rilis dibuat otomatis.
+- Dengan mengirim kontribusi, kamu setuju bahwa kontribusimu dilisensikan di bawah [CC BY-NC 4.0](LICENSE), sama seperti kamus ini.
 
-## Setelah PR di-merge
+## Setelah PR dikirim
 
-Maintainer menggabungkan `develop` ke `main` saat waktunya rilis, lalu membuat tag versi (misalnya `v1.0.3`). CI otomatis membangun file zip dan menerbitkannya di halaman Releases.
+PR yang memenuhi syarat akan digabungkan ke `develop` dan ikut terbit pada rilis berikutnya.
