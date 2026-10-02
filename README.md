@@ -1,16 +1,18 @@
 # JIDict untuk Yomitan
 
-Kamus **Jepang → Indonesia** berisi **±299.800 kosakata** lengkap dengan bacaan (reading) dan kelas kata (Part of Speech). Dipakai lewat ekstensi [Yomitan](https://yomitan.wiki/) di browser — arahkan kursor ke kata Jepang, artinya langsung muncul.
+**Baca bahasa Jepang tanpa berhenti bolak-balik buka kamus.**
 
-JIDict adalah kamus Jepang–Indonesia berformat Yomitan pertama di Indonesia, pertama kali dipublikasikan di server Discord Philia Space pada 17 Juni 2025.
+JIDict adalah kamus **Jepang → Indonesia** untuk [Yomitan](https://yomitan.wiki/): cukup arahkan kursor ke kata Jepang di halaman web mana pun — arti, bacaan, dan kelas katanya langsung muncul. Mau baca light novel, artikel berita, atau dokumen kerja, ritme membacamu tidak terputus.
 
-## Unduh & pasang
+Ini adalah kamus Jepang–Indonesia berformat Yomitan **pertama di Indonesia**, pertama kali dipublikasikan di server Discord Philia Space pada 17 Juni 2025 — dan gratis untuk siapa pun.
 
-1. Buka halaman **[Releases](../../releases)** dan unduh file terbaru (`JIDict-yomitan-vX.Y.Z.zip`).
-2. Di browser, buka pengaturan Yomitan → **Dictionaries** → **Import**, lalu pilih file zip tersebut.
-3. Aktifkan kamus JIDict di daftar kamus. Selesai.
+## Pasang dalam 1 menit
 
-> Versi lama tetap tersedia di halaman Releases dan di folder [`archive/original/`](archive/original/) sebagai dokumentasi.
+1. Unduh file terbaru dari halaman **[Releases](../../releases)** (`JIDict-yomitan-vX.Y.Z.zip`).
+2. Buka pengaturan Yomitan → **Dictionaries** → **Import**, lalu pilih file tersebut.
+3. Aktifkan JIDict di daftar kamus. Selesai — arahkan kursormu ke kata Jepang apa pun dan lihat hasilnya.
+
+> Butuh versi lama? Semua versi tetap tersedia di halaman Releases dan di folder [`archive/original/`](archive/original/).
 
 ## Isi kamus
 
@@ -18,14 +20,15 @@ JIDict adalah kamus Jepang–Indonesia berformat Yomitan pertama di Indonesia, p
 |---|---|
 | Arah | Jepang → Indonesia |
 | Entri (v1.0.2) | 299.801 |
+| Kelengkapan | Bacaan (reading) + kelas kata (Part of Speech) di setiap entri |
 | Format | Yomitan dictionary format 3 |
-| Lisensi | [CC BY-NC 4.0](LICENSE) (bebas dipakai & diubah, **nonkomersial**, wajib atribusi) |
+| Lisensi | [CC BY-NC 4.0](LICENSE) — gratis dipakai & diubah, nonkomersial, wajib atribusi |
 
-Riwayat perubahan tiap versi ada di catatan masing-masing Release.
+Detail perubahan tiap versi ada di catatan masing-masing Release.
 
-## Ikut berkontribusi
+## Kamus ini milik kita bersama
 
-Menemukan arti yang salah, reading yang keliru, atau kata yang belum ada? Baca **[CONTRIBUTING.md](CONTRIBUTING.md)** — semua kontribusi masuk lewat Pull Request ke branch `develop`.
+Menemukan arti yang kurang pas, bacaan yang keliru, atau kata yang belum ada? Jangan cuma lewat — **perbaiki langsung**. Baca **[CONTRIBUTING.md](CONTRIBUTING.md)**, kirim Pull Request ke branch `develop`, dan perbaikanmu akan ikut terbit di rilis berikutnya untuk dipakai semua orang.
 
 ## Kredit
 
