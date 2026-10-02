@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Tolak PR yang langsung ke main
         run: |
           if [ "${{ github.base_ref }}" = "main" ] && [ "${{ github.head_ref }}" != "develop" ]; then
@@ -20,6 +23,21 @@ jobs:
             exit 1
           fi
           echo "OK: target PR valid (base=${{ github.base_ref }})."
+      - name: Tolak ubahan workflow di luar jalur rilis
+        run: |
+          if [ "${{ github.head_ref }}" = "develop" ]; then
+            echo "OK: dari develop (jalur rilis maintainer), boleh menyentuh .github/."
+            exit 0
+          fi
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          echo "Berkas berubah:"
+          echo "$CHANGED"
+          if echo "$CHANGED" | grep -q '^\.github/'; then
+            echo "DITOLAK: PR ini menyentuh .github/ (workflow/CI)."
+            echo "Perubahan workflow hanya boleh lewat jalur rilis resmi (develop -> main oleh maintainer)."
+            exit 1
+          fi
+          echo "OK: tidak menyentuh .github/."
   validate:
     runs-on: ubuntu-latest
     steps:

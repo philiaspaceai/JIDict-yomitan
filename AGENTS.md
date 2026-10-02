@@ -50,6 +50,7 @@ butuh Node + `zip`/`unzip`). Jangan mengarang format sendiri.
 - DILARANG mengubah `revision` di `src/index.json`.
 - DILARANG commit file `.zip`, isi `dist/`, atau menghapus `src/LICENSE.txt`.
 - DILARANG mengubah workflow di `.github/`, `scripts/yomitan.mjs`, atau file lisensi.
+  Perubahan `.github/` dari luar `develop` otomatis ditolak job `guard`.
 - DILARANG push langsung ke repo upstream dalam kondisi apa pun.
 
 ## 3. Berhenti dan tanya manusia jika
