@@ -1,5 +1,9 @@
 # JIDict untuk Yomitan
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/philiaspaceai/JIDict-yomitan)](../../releases)
+[![Validate](https://github.com/philiaspaceai/JIDict-yomitan/actions/workflows/validate.yml/badge.svg)](../../actions)
+
 JIDict adalah kamus elektronik **Jepang → Indonesia** yang dikembangkan untuk digunakan bersama ekstensi peramban [Yomitan](https://yomitan.wiki/). Setelah kamus ini dipasang, pengguna cukup mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun untuk langsung melihat artinya dalam bahasa Indonesia, lengkap dengan bacaan (reading) dan kelas kata (Part of Speech) — tanpa perlu membuka situs atau aplikasi kamus terpisah.
 
 ## Latar belakang
