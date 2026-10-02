@@ -44,5 +44,5 @@ Baca **[CONTRIBUTING.md](CONTRIBUTING.md)**. Intinya:
 
 ## Lisensi
 
-Belum final. Rencana: CC BY-SA 4.0 (umum untuk data kamus).
+CC BY-NC 4.0 — Utawnyan (Founder) & Demonkzz.
 Lihat [LICENSE](LICENSE).

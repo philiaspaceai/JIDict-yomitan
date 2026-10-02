@@ -1,20 +1,7 @@
 # Sumber data kamus (source of truth)
 
-Folder ini adalah **satu-satunya yang diedit manusia dan CI**.
-
-## Nanti taruh data di sini
-
-Kamu pegang zip Yomitan v1.0.1–v1.0.2. Saat sudah siap, unpack ke sini:
-
-```bash
-# dari root repo
-rm -f src/term_bank_1.json src/tag_bank_1.json
-node scripts/yomitan.mjs unpack /path/ke/JIDict-v1.0.2.zip ./src
-node scripts/yomitan.mjs validate ./src
-```
-
-Setelah itu `src/` berisi `index.json` + `*_bank_*.json` asli. Contoh placeholder
-di bawah akan tertimpa — itu wajar, hapus saja placeholder-nya.
+Folder ini hasil unpack `archive/original/JIDict-v1.0.2.zip` dan adalah
+**satu-satunya yang diedit manusia dan CI**.
 
 ## Aturan
 
