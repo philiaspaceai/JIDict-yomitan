@@ -54,3 +54,4 @@ Pengguna mengunduh dari halaman Releases, bukan dari `src/`.
 Jika rilis rusak: buat PR perbaikan ke `develop`, ulangi langkah di atas dengan nomor patch baru
 (misal `v1.0.4`). Jangan hapus tag lama yang sudah diunduh orang.
 # test
+# owner push test
