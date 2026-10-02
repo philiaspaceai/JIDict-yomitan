@@ -1,48 +1,31 @@
-# JIDict-yomitan
+# JIDict untuk Yomitan
 
-Kamus Jepang–Indonesia untuk [Yomitan](https://yomitan.wiki/).
+Kamus **Jepang → Indonesia** berisi **±299.800 kosakata** lengkap dengan bacaan (reading) dan kelas kata (Part of Speech). Dipakai lewat ekstensi [Yomitan](https://yomitan.wiki/) di browser — arahkan kursor ke kata Jepang, artinya langsung muncul.
 
-> Repo ini adalah **data kamus**. Repo website (`philiaspaceai/JIDict`) tidak diganggu.
+## Unduh & pasang
 
-## Unduh
+1. Buka halaman **[Releases](../../releases)** dan unduh file terbaru (`JIDict-yomitan-vX.Y.Z.zip`).
+2. Di browser, buka pengaturan Yomitan → **Dictionaries** → **Import**, lalu pilih file zip tersebut.
+3. Aktifkan kamus JIDict di daftar kamus. Selesai.
 
-Ambil file `.zip` terbaru dari halaman **[Releases](../../releases)**, lalu di Yomitan:
-`Settings → Dictionaries → Import` → pilih file zip.
+> Versi lama tetap tersedia di halaman Releases dan di folder [`archive/original/`](archive/original/) sebagai dokumentasi.
 
-## Struktur
+## Isi kamus
 
-```text
-src/                 ← sumber utama (hasil unpack zip, yang diedit kontributor)
-  index.json
-  term_bank_*.json
-  tag_bank_*.json
-scripts/
-  yomitan.mjs        ← validasi & packing tanpa install apa pun (butuh `zip`/`unzip`)
-dist/                ← hasil build lokal/CI, JANGAN di-commit (di-ignore)
-.github/workflows/
-  validate.yml       ← validasi otomatis tiap PR
-  release.yml        ← build zip + buat GitHub Release tiap tag v*
-docs/
-  RELEASING.md       ← cara rilis versi baru
-```
+| | |
+|---|---|
+| Arah | Jepang → Indonesia |
+| Entri (v1.0.2) | 299.801 |
+| Format | Yomitan dictionary format 3 |
+| Lisensi | [CC BY-NC 4.0](LICENSE) (bebas dipakai & diubah, **nonkomersial**, wajib atribusi) |
 
-`src/` adalah **satu-satunya source of truth**. File zip di Releases selalu hasil
-`pack` dari `src/` di tag tersebut. Jangan edit langsung file zip.
+Riwayat perubahan tiap versi ada di catatan masing-masing Release.
 
-## Kontribusi
+## Ikut berkontribusi
 
-Baca **[CONTRIBUTING.md](CONTRIBUTING.md)**. Intinya:
+Menemukan arti yang salah, reading yang keliru, atau kata yang belum ada? Baca **[CONTRIBUTING.md](CONTRIBUTING.md)** — semua kontribusi masuk lewat Pull Request ke branch `develop`.
 
-1. Semua perubahan masuk via Pull Request ke branch `develop` (jangan ke `main`).
-2. CI akan menjalankan `node scripts/yomitan.mjs validate ./src`.
-3. Maintainer me-review, merge ke `develop`, lalu saat rilis merge `develop` → `main` + buat tag `v*`.
+## Kredit
 
-## Branch
-
-- `main` — stabil, terproteksi. Hanya menerima PR dari `develop`. Tiap tag `v*` di `main` otomatis jadi Release.
-- `develop` — tempat integrasi semua kontribusi.
-
-## Lisensi
-
-CC BY-NC 4.0 — Utawnyan (Founder) & Demonkzz.
-Lihat [LICENSE](LICENSE).
+Dibuat oleh **Utawnyan** (Founder) & **Demonkzz** (Contributor).
+Dilisensikan di bawah [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/).

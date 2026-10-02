@@ -1,53 +1,54 @@
-# Kontribusi ke JIDict-yomitan
+# Panduan Kontribusi
 
-Dokumen ini menjelaskan cara kontribusi yang aman: **tidak ada yang langsung ke `main`**.
+Terima kasih sudah mau membantu memperbaiki JIDict. Semua perubahan masuk lewat **Pull Request ke branch `develop`** — branch `main` terproteksi dan hanya menerima PR dari `develop`.
 
-## Aturan utama
+## Bentuk kontribusi yang diterima
 
-1. **Jangan push langsung ke `main`.** `main` terproteksi, hanya bisa via Pull Request dari `develop`.
-2. **Semua PR kontributor targetnya `develop`.**
-3. Satu PR = satu tujuan (misal: tambah 10 entri, atau perbaiki typo). Jangan campur banyak hal.
-4. Jangan commit file zip / folder `dist/`. CI yang membangun zip rilis.
+- **Perbaiki arti/terjemahan** yang salah atau kurang tepat.
+- **Perbaiki reading (bacaan)** yang keliru.
+- **Tambah kosakata baru** yang belum ada di kamus.
+- **Perbaiki kelas kata (Part of Speech)** yang tidak sesuai.
+- **Laporkan masalah** lewat Issue kalau belum sempat memperbaikinya sendiri (sertakan kata, reading, dan arti yang benar).
 
-## Alur kontribusi
+## Persiapan
 
-```text
-fork repo → branch baru dari develop → edit src/ → PR ke develop → review + CI hijau → merge
-```
+- [Node.js](https://nodejs.org/) versi 18 ke atas.
+- Perintah `zip` dan `unzip` (umumnya sudah tersedia di Linux/macOS; Windows via Git Bash).
+- Tidak perlu install apa pun — script validasi sudah tersedia di `scripts/yomitan.mjs`.
 
-Langkah detail:
+## Alur kerja
 
-1. Fork repo `philiaspaceai/JIDict-yomitan`, clone fork-mu.
-2. Pindah ke `develop` terbaru:
+1. **Fork** repo ini, lalu clone fork-mu.
+2. Buat branch baru dari `develop` yang terbaru:
    ```bash
    git fetch upstream
    git checkout develop
    git pull upstream develop
-   git checkout -b tambah-kata-xyz
+   git checkout -b perbaiki-arti-xyz
    ```
-3. Edit file di `src/` (lihat `src/README.md`). Untuk edit besar, unpack dulu dari zip stabil bila perlu:
+3. **Ubah data di `src/`** — di sinilah entri kamus tinggal (hasil unpack rilis stabil). Contoh perintah:
    ```bash
-   node scripts/yomitan.mjs unpack ./jidict-v1.0.2.zip ./src
+   # cari entri
+   node scripts/yomitan.mjs get ./src --term "猫"
+
+   # tambah entri: [kata, reading, tag, rules, skor, [arti], sequence, tag-kata]
+   node scripts/yomitan.mjs add ./src --entry '["猫","ねこ","","",0,["kucing"],1,""]'
    ```
-4. Validasi lokal sebelum push (wajib):
+   File `term_bank_*.json` berukuran besar — usahakan **satu PR untuk satu topik** (misalnya satu kelompok kata atau satu jenis perbaikan), jangan campur banyak hal sekaligus.
+4. **Validasi wajib sebelum push:**
    ```bash
    node scripts/yomitan.mjs validate ./src
    ```
-   Harus `ok: true`. Kalau ada `errors`, perbaiki dulu.
-5. Push branch-mu, buka PR dengan base `develop`. Isi template PR: apa yang ditambah/diubah, jumlah entri, hasil validasi.
-6. Tunggu review maintainer + CI hijau. Perbaiki bila ada komentar.
+   Hasil harus `ok: true`. Perbaiki dulu kalau ada `errors`.
+5. Push branch-mu dan buka PR dengan target **`develop`**. Jelaskan di PR: apa yang diubah, berapa entri, dan hasil validasi.
+6. Tunggu review maintainer. Kalau ada komentar, perbaiki di branch yang sama.
 
-## Yang diperiksa reviewer + CI
+## Aturan
 
-- `validate ./src` lolos (format 3, penomoran bank berurutan, tiap entri 8 field untuk term, dsb).
-- Tidak ada bank kosong, tidak ada nama file aneh (hanya `index.json`, `*_bank_N.json`, `styles.css`).
-- `index.json` → `title` dan `revision` tidak kosong. Jangan naikkan `revision` di PR biasa (maintainer yang menaikkan saat rilis).
-- Tidak ada duplikat massal / hapus massal tanpa alasan jelas.
+- Jangan commit file `.zip` atau isi `dist/` — file rilis dibuat otomatis oleh CI.
+- Jangan mengubah `revision` di `src/index.json` pada PR biasa — nomor versi dinaikkan maintainer saat rilis.
+- Jangan menghapus entri dalam jumlah besar tanpa diskusi di Issue terlebih dahulu.
 
-## Rilis (hanya maintainer)
+## Setelah PR di-merge
 
-Lihat `docs/RELEASING.md`. Ringkasnya: merge `develop` → `main`, buat tag `vX.Y.Z`, CI membuat zip + Release.
-
-## Butuh bantuan?
-
-Buka Issue dengan contoh kata yang bermasalah (term + reading + arti yang benar).
+Maintainer menggabungkan `develop` ke `main` saat waktunya rilis, lalu membuat tag versi (misalnya `v1.0.3`). CI otomatis membangun file zip dan menerbitkannya di halaman Releases.
