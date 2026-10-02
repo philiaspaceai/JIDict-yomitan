@@ -1,0 +1,10 @@
+{
+  "title": "JIDict",
+  "format": 3,
+  "revision": "0.0.0-placeholder",
+  "author": "philiaspaceai",
+  "description": "Kamus Jepang-Indonesia (placeholder, akan diganti hasil unpack v1.0.2).",
+  "sourceLanguage": "ja",
+  "targetLanguage": "id",
+  "url": "https://github.com/philiaspaceai/JIDict-yomitan"
+}

@@ -1,0 +1,3 @@
+# Build output, jangan di-commit.
+dist/*.zip
+dist/*.json

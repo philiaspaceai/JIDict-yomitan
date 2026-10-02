@@ -1,0 +1,31 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate
+        run: node scripts/yomitan.mjs validate ./src
+      - name: Pack dictionary
+        run: |
+          mkdir -p dist
+          TAG="${GITHUB_REF_NAME}"
+          node scripts/yomitan.mjs pack ./src "./dist/JIDict-yomitan-${TAG}.zip"
+          ls -lh dist/
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
