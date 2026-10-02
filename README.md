@@ -2,6 +2,8 @@
 
 Kamus **Jepang → Indonesia** berisi **±299.800 kosakata** lengkap dengan bacaan (reading) dan kelas kata (Part of Speech). Dipakai lewat ekstensi [Yomitan](https://yomitan.wiki/) di browser — arahkan kursor ke kata Jepang, artinya langsung muncul.
 
+JIDict adalah kamus Jepang–Indonesia berformat Yomitan pertama di Indonesia, pertama kali dipublikasikan di server Discord Philia Space pada 17 Juni 2025.
+
 ## Unduh & pasang
 
 1. Buka halaman **[Releases](../../releases)** dan unduh file terbaru (`JIDict-yomitan-vX.Y.Z.zip`).
