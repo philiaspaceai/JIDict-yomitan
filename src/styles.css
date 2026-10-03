@@ -1,6 +1,6 @@
-/* JIDict styles — mengikuti bahasa visual Jitendex
-   (kartu latar lembut + aksen kiri berwarna + pill kecil).
-   Yomitan memetakan data.content -> data-sc-content,
+/* JIDict styles — mengikuti pola Jitendex: latar kartu & teks isi adaptif
+   terhadap tema Yomitan (aman di light & dark mode), aksen warna tetap
+   khas JIDict. Yomitan memetakan data.content -> data-sc-content,
    data.class -> data-sc-class. */
 
 span[data-sc-class="tag"] {
@@ -48,10 +48,10 @@ li[data-sc-content="sense"] {
     margin-top: 0.15em;
 }
 
-/* Contoh kalimat: kartu terang, aksen kiri hitam */
+/* Contoh kalimat: kartu adaptif tema, aksen kiri mengikuti teks tema */
 div[data-sc-content="examples"] {
-    background-color: #f7f7f7;
-    border-left: 3px solid #333;
+    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 6%, transparent);
+    border-left: 3px solid var(--text-color, var(--fg, #333));
     border-radius: 0.2em;
     margin-top: 0.5em;
     padding: 0.4em 0.6em;
@@ -71,22 +71,22 @@ div[data-sc-content="example-jp"] {
 }
 
 div[data-sc-content="example-id"] {
-    color: #555;
+    color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 72%, transparent);
     font-size: 0.9em;
 }
 
-/* Kotak rujukan: kartu biru muda, aksen kiri biru */
+/* Kotak rujukan: kartu adaptif, aksen kiri biru */
 div[data-sc-content="xref"] {
-    background-color: #eef4fb;
+    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 6%, transparent);
     border-left: 3px solid #2b6cb0;
     border-radius: 0.3em;
     margin-top: 0.5em;
     padding: 0.4em 0.6em;
 }
 
-/* Kotak antonim: kartu merah muda, aksen kiri merah */
+/* Kotak antonim: kartu adaptif, aksen kiri merah */
 div[data-sc-content="antonym"] {
-    background-color: #fbeeed;
+    background-color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 6%, transparent);
     border-left: 3px solid #a02c2c;
     border-radius: 0.3em;
     margin-top: 0.5em;
@@ -117,17 +117,17 @@ div[data-sc-content="antonym-item"] a {
 
 span[data-sc-content="xref-glossary"],
 span[data-sc-content="antonym-glossary"] {
-    color: #555;
+    color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 72%, transparent);
     font-size: 0.9em;
 }
 
 /* Atribusi */
 div[data-sc-content="attribution"] {
-    color: #999;
+    color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 60%, transparent);
     font-size: 0.8em;
     margin-top: 0.5em;
 }
 
 div[data-sc-content="attribution"] a {
-    color: #999;
+    color: color-mix(in srgb, var(--text-color, var(--fg, #333)) 60%, transparent);
 }
