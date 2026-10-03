@@ -24,6 +24,8 @@ Sejak publikasi awal, kamus ini terus disempurnakan: bacaan dan definisi dibersi
 
 ## Pemasangan
 
+[![Download JIDict](./assets/download.png)](../../releases)
+
 Prasyarat: peramban yang telah terpasang ekstensi Yomitan.
 
 1. Buka halaman **[Releases](../../releases)** dan unduh berkas versi terbaru (`JIDict-yomitan-vX.Y.Z.zip`).
@@ -39,6 +41,8 @@ Mulai versi 1.0.3, JIDict mendukung pembaruan langsung dari Yomitan — tidak pe
 Unduh versi terbaru dari halaman **[Releases](../../releases)**. Versi-versi lama tetap tersedia di halaman yang sama, dan berkas-berkas aslinya tersimpan di folder [`archive/original/`](archive/original/) sebagai arsip. Catatan perubahan selengkapnya ada pada halaman masing-masing Release.
 
 ## Berkontribusi
+
+![Let's build JIDict together](./assets/contribute-invitation.jpg)
 
 JIDict dikembangkan bersama komunitas. Apabila menemukan padanan arti yang kurang tepat, bacaan yang keliru, atau kosakata yang belum tercakup, kamu bisa membantu memperbaikinya — tanpa perlu bisa programming. Cukup gunakan AI agent pilihanmu yang telah dipasangi skill wajib repo ini, lalu sampaikan keinginanmu dalam bahasa sehari-hari.
 
