@@ -24,11 +24,11 @@ Sejak publikasi awal, kamus ini terus disempurnakan: bacaan dan definisi dibersi
 
 ## Pemasangan
 
-[![Download JIDict](./assets/download.png)](../../releases)
+[![Download JIDict](./assets/download.png)](https://github.com/philiaspaceai/JIDict-yomitan/releases/latest/download/JIDict-yomitan.zip)
 
 Prasyarat: peramban yang telah terpasang ekstensi Yomitan.
 
-1. Buka halaman **[Releases](../../releases)** dan unduh berkas versi terbaru (`JIDict-yomitan-vX.Y.Z.zip`).
+1. Tekan tombol **Download** di atas — berkas versi terbaru langsung terunduh otomatis.
 2. Buka pengaturan Yomitan, masuk ke bagian **Dictionaries**, lalu pilih **Import** dan arahkan ke berkas yang telah diunduh.
 3. Setelah impor selesai, pastikan JIDict tercantum dan aktif dalam daftar kamus. Pengujian dapat dilakukan dengan mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun.
 
