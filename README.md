@@ -6,8 +6,6 @@
 [![Latest release](https://img.shields.io/github/v/release/philiaspaceai/JIDict-yomitan)](../../releases)
 [![Validate](https://github.com/philiaspaceai/JIDict-yomitan/actions/workflows/validate.yml/badge.svg)](../../actions)
 
-<img src="./assets/logo-transparent.png" alt="JIDict" width="220">
-
 JIDict adalah kamus elektronik **Jepang → Indonesia** yang dikembangkan untuk digunakan bersama ekstensi peramban [Yomitan](https://yomitan.wiki/). Setelah kamus ini dipasang, pengguna cukup mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun untuk langsung melihat artinya dalam bahasa Indonesia, lengkap dengan bacaan (reading) dan kelas kata (Part of Speech) — tanpa perlu membuka situs atau aplikasi kamus terpisah.
 
 ## Latar belakang
