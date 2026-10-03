@@ -1,5 +1,7 @@
 # Panduan Kontribusi
 
+![Before you contribute](./assets/contribute.jpg)
+
 Siapa pun bisa membantu memperbaiki kamus ini — kamu tidak perlu bisa programming. Kamu cukup menyampaikan apa yang ingin diperbaiki atau ditambahkan dalam bahasa sehari-hari kepada AI agent pilihanmu. Agent-mu yang mengerjakan sisanya.
 
 ## Belum punya AI agent?
