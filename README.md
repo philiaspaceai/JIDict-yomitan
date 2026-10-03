@@ -30,6 +30,10 @@ Prasyarat: peramban yang telah terpasang ekstensi Yomitan.
 2. Buka pengaturan Yomitan, masuk ke bagian **Dictionaries**, lalu pilih **Import** dan arahkan ke berkas yang telah diunduh.
 3. Setelah impor selesai, pastikan JIDict tercantum dan aktif dalam daftar kamus. Pengujian dapat dilakukan dengan mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun.
 
+## Pembaruan otomatis
+
+Mulai versi 1.0.3, JIDict mendukung pembaruan langsung dari Yomitan — tidak perlu mengunduh dan mengimpor ulang secara manual. Buka pengaturan Yomitan → **Dictionaries** → **Check for Updates**; bila versi baru tersedia, Yomitan akan mengunduh dan memasangnya sendiri.
+
 ## Unduhan
 
 Unduh versi terbaru dari halaman **[Releases](../../releases)**. Versi-versi lama tetap tersedia di halaman yang sama, dan berkas-berkas aslinya tersimpan di folder [`archive/original/`](archive/original/) sebagai arsip. Catatan perubahan selengkapnya ada pada halaman masing-masing Release.
