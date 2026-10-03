@@ -1,4 +1,4 @@
-# JIDict untuk Yomitan
+# JIDict — Kamus Jepang–Indonesia untuk Yomitan (Japanese–Indonesian Dictionary)
 
 ![JIDict banner](./assets/banner.jpg)
 
@@ -6,7 +6,7 @@
 [![Latest release](https://img.shields.io/github/v/release/philiaspaceai/JIDict-yomitan)](../../releases)
 [![Validate](https://github.com/philiaspaceai/JIDict-yomitan/actions/workflows/validate.yml/badge.svg)](../../actions)
 
-JIDict adalah kamus elektronik **Jepang → Indonesia** yang dikembangkan untuk digunakan bersama ekstensi peramban [Yomitan](https://yomitan.wiki/). Setelah kamus ini dipasang, pengguna cukup mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun untuk langsung melihat artinya dalam bahasa Indonesia, lengkap dengan bacaan (reading) dan kelas kata (Part of Speech) — tanpa perlu membuka situs atau aplikasi kamus terpisah.
+JIDict (Japanese–Indonesian Dictionary) adalah kamus elektronik **Jepang → Indonesia** untuk ekstensi peramban [Yomitan](https://yomitan.wiki/): kamus popup Jepang Indonesia gratis berisi ratusan ribu kosakata lengkap dengan arti bahasa Indonesia, bacaan (reading), dan kelas kata. Setelah kamus ini dipasang, pengguna cukup mengarahkan kursor ke kata berbahasa Jepang pada halaman web mana pun untuk langsung melihat artinya dalam bahasa Indonesia — tanpa perlu membuka situs atau aplikasi kamus terpisah.
 
 ## Latar belakang
 
