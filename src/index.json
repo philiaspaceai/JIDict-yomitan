@@ -1,5 +1,5 @@
 {
-  "title": "JIDict",
+  "title": "JIDict v1.0.3",
   "format": 3,
   "revision": "1.0.3",
   "author": "Utawnyan & Demonkzz",
@@ -7,5 +7,8 @@
   "url": "https://github.com/philiaspaceai/JIDict-yomitan",
   "attribution": "CC BY-NC 4.0 — https://creativecommons.org/licenses/by-nc/4.0/",
   "sourceLanguage": "ja",
-  "targetLanguage": "id"
+  "targetLanguage": "id",
+  "isUpdatable": true,
+  "indexUrl": "https://github.com/philiaspaceai/JIDict-yomitan/releases/latest/download/JIDict.json",
+  "downloadUrl": "https://github.com/philiaspaceai/JIDict-yomitan/releases/latest/download/JIDict-yomitan.zip"
 }

@@ -19,32 +19,23 @@ Rekomendasi pribadi: Hermes Agent, Claude Desktop, atau OpenCode Desktop. Unduh 
 
 ## Caranya
 
-### 1. Pasang skill wajib di agent-mu
+### 1. Siapkan skill dan tool dari repo ini
 
-Agar agent-mu tahu cara mengedit data kamus dengan benar, skill berikut wajib terpasang:
-
-```bash
-npx skills add philiaspaceai/yomitan-agent-skills
-```
-
-Tidak terbiasa dengan perintah di atas? Salin kalimat ini ke agent-mu:
-
-```
-Please install the Yomitan agent skills into my setup by running:
-npx skills add philiaspaceai/yomitan-agent-skills
-```
-
-### 2. Sampaikan keinginanmu
-
-Ceritakan saja maumu dalam bahasa biasa. Contoh kalimat lengkap yang bisa disalin:
+Repo ini sudah membawa semuanya: skill penulisan makna di folder `.skills/` dan tool pengedit data di folder `scripts/`. Suruh agent-mu memakai keduanya — contohnya seperti ini:
 
 ```
 Bantu saya berkontribusi ke kamus JIDict di GitHub
 philiaspaceai/JIDict-yomitan: tambahkan kata "猫" yang dibaca
-"ねこ" dengan arti "kucing".
+"ねこ" dengan arti "kucing". Gunakan skill di folder .skills
+dan tool di folder scripts dari repo tersebut, lalu ikuti
+file AGENTS.md di repo.
 ```
 
 Sebutkan nama kamus dan tujuannya seperti contoh di atas supaya agent-mu tahu harus bekerja di mana — selebihnya biar agent-mu yang mengurus.
+
+### 2. Sampaikan keinginanmu
+
+Ceritakan saja maumu dalam bahasa biasa, misalnya "tambahkan kata ... yang artinya ..." atau "betulkan arti kata ... menjadi ...".
 
 ### 3. Periksa hasilnya
 

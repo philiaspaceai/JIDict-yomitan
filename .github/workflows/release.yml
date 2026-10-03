@@ -22,17 +22,22 @@ jobs:
         with:
           node-version: "22"
       - name: Validate
-        run: node scripts/yomitan.mjs validate ./src
+        run: node scripts/jidict.mjs validate ./src
       - name: Pack dictionary
         run: |
-          mkdir -p dist
+          mkdir -p workspace
           TAG="${GITHUB_REF_NAME}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then TAG="${{ inputs.tag }}"; fi
-          node scripts/yomitan.mjs pack ./src "./dist/JIDict-yomitan-${TAG}.zip"
-          ls -lh dist/
+          (cd src && zip -9 -q -r "../workspace/JIDict-yomitan-${TAG}.zip" index.json LICENSE.md styles.css term_bank_*.json)
+          # Aset nama-tetap untuk auto-update Yomitan (jangan diganti namanya):
+          cp "workspace/JIDict-yomitan-${TAG}.zip" workspace/JIDict-yomitan.zip
+          cp src/index.json workspace/JIDict.json
+          ls -lh workspace/
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag || github.ref_name }}
-          files: dist/*.zip
+          files: |
+            workspace/JIDict-yomitan-*.zip
+            workspace/JIDict.json
           generate_release_notes: true
