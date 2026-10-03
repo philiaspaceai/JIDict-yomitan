@@ -38,6 +38,7 @@ jobs:
         with:
           tag_name: ${{ inputs.tag || github.ref_name }}
           files: |
-            workspace/JIDict-yomitan-*.zip
+            workspace/JIDict-yomitan.zip
+            workspace/JIDict-yomitan-v*.zip
             workspace/JIDict.json
           generate_release_notes: true
