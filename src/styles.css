@@ -1,0 +1,133 @@
+/* JIDict styles — mengikuti bahasa visual Jitendex
+   (kartu latar lembut + aksen kiri berwarna + pill kecil).
+   Yomitan memetakan data.content -> data-sc-content,
+   data.class -> data-sc-class. */
+
+span[data-sc-class="tag"] {
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 0.4em;
+    padding: 0.15em 0.4em;
+    vertical-align: text-bottom;
+    word-break: keep-all;
+}
+
+/* Badge kelas kata: hijau tosca khas JIDict */
+span[data-sc-content="part-of-speech-info"] {
+    background-color: #0e7c6b;
+    color: white;
+}
+
+/* Label bidang: ungu */
+span[data-sc-content="field-info"] {
+    background-color: #6d4fa3;
+    color: white;
+}
+
+/* Label dialek: hijau */
+span[data-sc-content="dialect-info"] {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* Label lain-lain: cokelat */
+span[data-sc-content="misc-info"] {
+    background-color: #8d5a2b;
+    color: white;
+}
+
+/* Daftar makna */
+ol[data-sc-content="glossary"] {
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    padding-left: 1.4em;
+}
+
+li[data-sc-content="sense"] {
+    margin-top: 0.15em;
+}
+
+/* Contoh kalimat: kartu terang, aksen kiri hitam */
+div[data-sc-content="examples"] {
+    background-color: #f7f7f7;
+    border-left: 3px solid #333;
+    border-radius: 0.2em;
+    margin-top: 0.5em;
+    padding: 0.4em 0.6em;
+}
+
+div[data-sc-content="example"] {
+    margin-top: 0.3em;
+}
+
+span[data-sc-content="examples-label"] {
+    background-color: #0e7c6b;
+    color: white;
+}
+
+div[data-sc-content="example-jp"] {
+    font-size: 1em;
+}
+
+div[data-sc-content="example-id"] {
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Kotak rujukan: kartu biru muda, aksen kiri biru */
+div[data-sc-content="xref"] {
+    background-color: #eef4fb;
+    border-left: 3px solid #2b6cb0;
+    border-radius: 0.3em;
+    margin-top: 0.5em;
+    padding: 0.4em 0.6em;
+}
+
+/* Kotak antonim: kartu merah muda, aksen kiri merah */
+div[data-sc-content="antonym"] {
+    background-color: #fbeeed;
+    border-left: 3px solid #a02c2c;
+    border-radius: 0.3em;
+    margin-top: 0.5em;
+    padding: 0.4em 0.6em;
+}
+
+/* Label "Lihat juga": pill biru */
+div[data-sc-content="xref"] span[data-sc-content="reference-label"] {
+    background-color: #2b6cb0;
+    color: white;
+}
+
+/* Label "Antonim": pill merah marun */
+div[data-sc-content="antonym"] span[data-sc-content="reference-label"] {
+    background-color: #a02c2c;
+    color: white;
+}
+
+div[data-sc-content="xref-item"],
+div[data-sc-content="antonym-item"] {
+    margin-top: 0.25em;
+}
+
+div[data-sc-content="xref-item"] a,
+div[data-sc-content="antonym-item"] a {
+    font-size: 1.05em;
+}
+
+span[data-sc-content="xref-glossary"],
+span[data-sc-content="antonym-glossary"] {
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Atribusi */
+div[data-sc-content="attribution"] {
+    color: #999;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
+div[data-sc-content="attribution"] a {
+    color: #999;
+}

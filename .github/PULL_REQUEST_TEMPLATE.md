@@ -5,7 +5,7 @@
 ## Target
 
 - [ ] PR ini ke `develop` (bukan `main`)
-- [ ] `node scripts/yomitan.mjs validate ./src` lolos di lokal
+- [ ] `node scripts/jidict.mjs validate ./src` lolos di lokal
 
 ## Detail
 

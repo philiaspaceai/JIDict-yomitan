@@ -46,4 +46,4 @@ jobs:
         with:
           node-version: "22"
       - name: Validate dictionary
-        run: node scripts/yomitan.mjs validate ./src
+        run: node scripts/jidict.mjs validate ./src
