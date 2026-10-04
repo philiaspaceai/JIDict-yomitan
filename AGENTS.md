@@ -26,7 +26,10 @@ node scripts/jidict.mjs validate ./src
 ```
 
 `senses` selalu array string polos, tanpa nomor/header/label. Contoh/rujukan/antonim
-bukan urusanmu — jangan sentuh blok-blok itu.
+bukan urusanmu — jangan sentuh blok-blok itu. Tabel konjugasi (`forms`) juga
+bukan urusanmu: entri verba/adjektiva baru tidak perlu menyertakan tabel —
+maintainer menginjeksikannya berkala via `scripts/conj.mjs` (tool maintainer,
+jangan dijalankan/diubah).
 
 ## 2. Urutan kerja yang benar
 
@@ -55,7 +58,7 @@ bukan urusanmu — jangan sentuh blok-blok itu.
 - DILARANG menargetkan `main` sebagai base PR (job `guard` otomatis menolak).
 - DILARANG mengubah `revision` di `src/index.json`.
 - DILARANG menambah/mengubah/menghapus contoh kalimat, blok lihat-juga/antonim,
-  pill info, workflow `.github/`, `scripts/`, file lisensi, atau `src/styles.css`.
+  pill info, blok konjugasi (`forms`), workflow `.github/`, `scripts/`, file lisensi, atau `src/styles.css`.
 - DILARANG commit file `.zip`.
 - DILARANG push langsung ke repo upstream dalam kondisi apa pun.
 - DILARANG memakai TAG di luar daftar dikenal (tool sudah menolaknya otomatis).
