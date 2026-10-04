@@ -19,6 +19,7 @@ Sejak publikasi awal, kamus ini terus disempurnakan: bacaan dan definisi dibersi
 - **Cakupan kosakata yang luas.** Memuat ratusan ribu entri, dari kosakata sehari-hari hingga istilah yang jarang ditemui. Angka pasti setiap versi tercantum di halaman Releases.
 - **Bacaan (reading) pada setiap entri.** Pengguna dapat mengetahui cara baca yang benar untuk setiap kata, termasuk yang ditulis dengan kanji.
 - **Kelas kata (Part of Speech).** Setiap entri dilengkapi kategori gramatikalnya, sehingga pengguna memahami peran kata tersebut dalam kalimat.
+- **Tabel konjugasi.** Verba dan adjektiva-i dilengkapi tabel bentuk konjugasi (kamus, sopan, te, lampau, tara, tai, potensial, perintah, bersyarat, pasif, kausatif, dan lainnya) — lengkap dengan versi sopan untuk bentuk tunggal.
 - **Berformat standar Yomitan (format 3).** Berkas kamus mengikuti spesifikasi resmi Yomitan sehingga dapat diimpor langsung tanpa konversi.
 - **Dikembangkan secara terbuka.** Seluruh data dan riwayat pengembangannya tersedia di repositori ini; setiap perbaikan dari komunitas diterbitkan pada rilis berikutnya.
 
