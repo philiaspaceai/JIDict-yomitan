@@ -8,6 +8,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
+import { classify } from "./conj.mjs";
 
 const BANK_SPLIT = 10000;
 const ATTRIB_TEXT = "JIDict (CC BY-NC 4.0)";
@@ -50,6 +51,20 @@ function zipNames(zipPath) {
 function zipRead(zipPath, inner) {
   try { return execFileSync("unzip", ["-p", zipPath, inner], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024 }); }
   catch { fail(`tidak bisa membaca ${inner} dari ${zipPath}`); }
+}
+
+// Kode kondisi Yomitan (v1/v5/vs/vk/vz/adj-i) untuk field rules.
+// Tanpa kode ini entri verba/adjektiva TIDAK cocok pada pencarian bentuk
+// konjugasi (Yomitan + hoshidicts memfilter via POS). `add` menempelkannya
+// otomatis; `validate` mewajibkannya. Jangan tulis manual.
+function rulesCodeFor(tag, term) {
+  const cls = classify(term);
+  if (!cls) return null;
+  if (tag.startsWith("動詞") && (cls === "v1" || cls.startsWith("v5") || ["vs", "vk", "vz"].includes(cls))) {
+    return cls.startsWith("v5") ? "v5" : cls;
+  }
+  if (tag === "形容詞-一般-*" && (cls === "adj-i" || cls === "adj-i-sp")) return "adj-i";
+  return null;
 }
 
 // Glos0: POS pill + daftar makna. Contoh/rujukan/antonim/atribusi di luar cakupan tool ini:
@@ -129,7 +144,8 @@ function cmdAdd(dir, entryJson) {
       if (typeof e[6] === "number" && e[6] > maxSeq) maxSeq = e[6];
     }
   }
-  const entry = [term, reading, "", tag, 0, [defObj], maxSeq + 1, ""];
+  const code = rulesCodeFor(tag, term);
+  const entry = [term, reading, "", code ? tag + " " + code : tag, 0, [defObj], maxSeq + 1, ""];
   const last = files[files.length - 1];
   const data = readJson(join(dir, last));
   data.push(entry);
@@ -222,6 +238,13 @@ function cmdValidate(target) {
       nEnt++;
       if (!Array.isArray(e) || e.length !== 8) { errors.push(`${n}[${i}]: bukan entri 8 field`); return; }
       if (typeof e[0] !== "string" || !e[0]) { errors.push(`${n}[${i}]: term kosong`); return; }
+      {
+        const need = rulesCodeFor(String(e[3] ?? "").split(" ")[0], e[0]);
+        const have = String(e[3] ?? "").split(" ");
+        if (need && !have.includes(need)) {
+          errors.push(`${n}[${i}]: entri terkonyugasi tanpa kode rules "${need}" (tambah via tool / minta maintainer menjalankan pass kode)`);
+        }
+      }
       for (const d of e[5]) {
         if (typeof d === "string") { errors.push(`${n}[${i}]: masih string (belum structured)`); continue; }
         if (d?.type !== "structured-content" || !Array.isArray(d.content)) { errors.push(`${n}[${i}]: structured-content rusak`); continue; }
